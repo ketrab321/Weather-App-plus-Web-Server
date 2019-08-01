@@ -12,6 +12,7 @@
   "dependencies": {
     "experss": "0.0.1-security",
     "express": "^4.17.1",
-    "hbs": "^4.0.4"
+    "hbs": "^4.0.4",
+    "request": "^2.88.0"
   }
 }
