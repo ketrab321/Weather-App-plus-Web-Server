@@ -11,6 +11,9 @@ fetch('http://puzzle.mead.io/puzzle').then((response)=>{
 
 let weatherForm = document.querySelector('form');
 let searchElement = document.querySelector('input')
+let errorParagraph = document.querySelector('#errorParagraph');
+let locationParagraph = document.querySelector("#locationParagraph");
+let forecastParagraph = document.querySelector("#forecastParagraph");
 
 weatherForm.addEventListener('submit',(e)=>{
     e.preventDefault();
@@ -20,8 +23,15 @@ weatherForm.addEventListener('submit',(e)=>{
     response.json().then((data)=>{
         if(data.error){
             console.log(data.error);
+            errorParagraph.textContent = data.error;
+            locationParagraph.textContent ='';
+            forecastParagraph.textContent = '';
         }else{
             console.log(data.location);
+            errorParagraph.textContent = '';
+            locationParagraph.textContent = data.location;
+            forecastParagraph.textContent = data.forecast;
+
             console.log(data.forecast);
         }
     })
