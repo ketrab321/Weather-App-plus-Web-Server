@@ -1,0 +1,41 @@
+body{
+    color: rgba(7, 121, 96, 0.623) ;
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 0 16px;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+footer{
+    color: rgb(145, 145, 145);
+    border-top: 3px solid rgb(145, 145, 145);
+    margin-top:20px;
+    padding: 16px 0;
+}
+
+header{
+    margin-top: 16px;
+    margin-bottom: 48px;
+}
+
+h1{
+    font-size: 64px;
+    margin-bottom: 16px;
+}
+
+header a{
+    color: rgb(69, 95, 66);
+    margin-right: 16px;
+    text-decoration: none;
+}
+
+.portrait {
+    width: 300px;
+}
+
+.main-content {
+    flex-grow: 1;
+}
