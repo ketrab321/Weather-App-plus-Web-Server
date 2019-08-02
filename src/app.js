@@ -8,7 +8,7 @@ const geocode = require('./utils/geocode');
 const publicDirectoryPath = path.join(__dirname,'..','public');
 const viewsPath = path.join(__dirname,'..','templates','views');
 const partialsPath = path.join(__dirname,'..','templates','partials');
-
+const port = process.env.port || 3000;
 
 const app = express();
 //setup static directory to serve
@@ -20,21 +20,21 @@ hbs.registerPartials(partialsPath);
 
 app.get('',(req,res)=>{
     res.render('index',{
-        title: "Title from app",
-        name: "My name"
+        title: "Weather App",
+        name: 'Bartosz Stajnowski'
     });
 })
 app.get('/help',(req,res)=>{
     res.render('help',{
         title: "Help me",
-        name: "Grzechu"
+        name:'Bartosz Stajnowski'
     })
 })
 
 app.get('/about',(req,res)=>{
     res.render('about',{
         title: "About me",
-        name: "Krzychu"
+        name: 'Bartosz Stajnowski'
     });
 })
 
@@ -79,7 +79,7 @@ app.get('/help/*',(req,res)=>{
     res.render('404page',{
         title: '404',
         errorMessage: 'Help article not found',
-        name: 'Johny Bravo'
+        name: 'Bartosz Stajnowski'
     });
 })
 app.get('*',(req,res)=>{
@@ -87,10 +87,10 @@ app.get('*',(req,res)=>{
         title: '404',
         errorMessage: 'not found',
 
-        name: 'Darth Vader'
+        name: 'Bartosz Stajnowski'
     });
 })
 
-app.listen(3000,()=>{
-    console.log("Server is up on port 3000");
+app.listen(port,()=>{
+    console.log("Server is up on port " + port);
 });
